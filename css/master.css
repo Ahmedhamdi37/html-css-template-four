@@ -321,4 +321,37 @@ ul {
   }
 }
 /* End Latest News */
+/* Start Latest Tasks */
+.tasks .tasks-row:not(:last-of-type) {
+  margin: 0 0 20px;
+  padding: 0 0 20px;
+  border-bottom: 1px solid #eee;
+}
+.tasks .tasks-row .info {
+  flex-grow: 1;
+}
+.tasks .done {
+  opacity: 0.3;
+}
+.tasks .done h3,
+.tasks .done p {
+  text-decoration: line-through;
+}
+.tasks .delete {
+  cursor: pointer;
+  transition: 0.3s;
+}
+.tasks-row:not(.done) .delete:hover {
+  color: var(--red-color);
+}
+/* End Latest Tasks */
+/* Start Latest Uploads */
+.latest-uploads img {
+  width: 40px;
+  height: 40px;
+}
+.latest-uploads ul li:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+/* End Latest Uploads */
 /* End content */
