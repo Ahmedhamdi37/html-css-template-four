@@ -43,6 +43,12 @@ ul {
 /* Start Sidebar */
 .sidebar {
   width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 100;
   box-shadow: 0 0 10px #ddd;
 }
 .sidebar > h3 {
@@ -102,6 +108,18 @@ ul {
 /* Start Content Head */
 .content {
   overflow: hidden;
+  margin-left: 250px;
+  transition: margin-left 0.3s ease;
+}
+@media (max-width: 992px) {
+  .sidebar {
+    position: relative;
+    height: auto;
+  }
+
+  .content {
+    margin-left: 0; /
+  }
 }
 .head .search::before {
   font-family: var(--fa-style-family-classic);
@@ -1101,6 +1119,62 @@ ul {
   animation: move-up 0.7s linear infinite;
 }
 /* End Files Page */
+/* Start Plans Page */
+.plans-page {
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+}
+@media (max-width: 767px) {
+  .plans-page {
+    grid-template-columns: minmax(200px, 1fr);
+    margin-left: 10px;
+    margin-right: 10px;
+    gap: 10px;
+  }
+}
+.plans-page .plan .top {
+  border: 1px solid white;
+  outline-width: 1px;
+  outline-style: solid;
+}
+.plans-page .plan .green {
+  outline-color: var(--green-color);
+}
+.plans-page .plan .top h2 {
+  font-size: 24px;
+}
+.plans-page .plan .top .price {
+  font-size: 40px;
+  position: relative;
+  width: fit-content;
+  margin: auto;
+}
+.plans-page .plan .top .price span {
+  font-size: 25px;
+  position: absolute;
+  left: -20px;
+  top: 0;
+}
+.plans-page .plan ul > li {
+  padding: 15px 0;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+.plans-page .plan ul > li > i:first-child {
+  font-size: 18px;
+  margin-right: 5px;
+  color: var(--red-color);
+}
+.plans-page .plan ul > li > i.yes {
+  color: var(--green-color);
+}
+.plans-page .plan ul > li .help {
+  color: var(--grey-color);
+  margin-left: auto;
+  cursor: pointer;
+}
+/* End Plans Page */
 /* Starting Animation */
 @keyframes change-color {
   0% {
